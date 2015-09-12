@@ -1,0 +1,37 @@
+{
+  "name": "matchstix",
+  "version": "0.1.0",
+  "description": "A WordPress development framework with multiple components. Use to build any new or existing WordPress theme or plugin. All components are optional, flexible, and made to be extended and customized. With a package manager like npm, easily keep Matchstix up-to-date in your custom theme or plugin: no child theme required. Developers welcome.",
+  "main": "./js/npm",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starverte/matchstix.git"
+  },
+  "keywords": [
+    "wordpress",
+    "sparks",
+    "flint",
+    "steel",
+    "css",
+    "html",
+    "php",
+    "js",
+    "responsive",
+    "framework",
+    "web",
+    "mobile-first",
+    "sass"
+  ],
+  "author": "Star Verte LLC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/starverte/matchstix/issues"
+  },
+  "homepage": "https://github.com/starverte/matchstix#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
