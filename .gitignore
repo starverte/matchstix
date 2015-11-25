@@ -27,6 +27,7 @@ _site
 *.sublime-project
 *.sublime-workspace
 nbproject
+tests
 Thumbs.db
 
 # Komodo
