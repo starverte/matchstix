@@ -11,24 +11,23 @@
  * Return arguments for registering msx_deck
  */
 function msx_card_deck_post_type_args() {
-  global $msx_text_domain;
   $labels = array(
-    'name'                => _x( 'Decks', 'Post Type General Name', $msx_text_domain ),
-    'singular_name'       => _x( 'Deck', 'Post Type Singular Name', $msx_text_domain ),
-    'menu_name'           => __( 'Cards', $msx_text_domain ),
-    'all_items'           => __( 'All decks', $msx_text_domain ),
-    'view_item'           => __( 'View', $msx_text_domain ),
-    'add_new_item'        => __( 'Add New', $msx_text_domain ),
-    'add_new'             => __( 'New', $msx_text_domain ),
-    'edit_item'           => __( 'Edit', $msx_text_domain ),
-    'update_item'         => __( 'Update', $msx_text_domain ),
-    'search_items'        => __( 'Search decks', $msx_text_domain ),
-    'not_found'           => __( 'No decks found', $msx_text_domain ),
-    'not_found_in_trash'  => __( 'No decks found in Trash. Did you check recycling?', $msx_text_domain ),
+    'name'                => _x( 'Decks', 'Post Type General Name', MSX_TEXT_DOMAIN ),
+    'singular_name'       => _x( 'Deck', 'Post Type Singular Name', MSX_TEXT_DOMAIN ),
+    'menu_name'           => __( 'Cards', MSX_TEXT_DOMAIN ),
+    'all_items'           => __( 'All decks', MSX_TEXT_DOMAIN ),
+    'view_item'           => __( 'View', MSX_TEXT_DOMAIN ),
+    'add_new_item'        => __( 'Add New', MSX_TEXT_DOMAIN ),
+    'add_new'             => __( 'New', MSX_TEXT_DOMAIN ),
+    'edit_item'           => __( 'Edit', MSX_TEXT_DOMAIN ),
+    'update_item'         => __( 'Update', MSX_TEXT_DOMAIN ),
+    'search_items'        => __( 'Search decks', MSX_TEXT_DOMAIN ),
+    'not_found'           => __( 'No decks found', MSX_TEXT_DOMAIN ),
+    'not_found_in_trash'  => __( 'No decks found in Trash. Did you check recycling?', MSX_TEXT_DOMAIN ),
   );
   $args = array(
-    'label'               => __( 'msx_card_deck', $msx_text_domain ),
-    'description'         => __( 'A grouping of cards', $msx_text_domain ),
+    'label'               => __( 'msx_card_deck', MSX_TEXT_DOMAIN ),
+    'description'         => __( 'A grouping of cards', MSX_TEXT_DOMAIN ),
     'labels'              => $labels,
     'supports'            => array( 'title' ),
     'hierarchical'        => false,
