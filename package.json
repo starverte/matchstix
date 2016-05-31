@@ -4,7 +4,7 @@
   "description": "A WordPress development framework with multiple components. Use to build any new or existing WordPress theme or plugin. All components are optional, flexible, and made to be extended and customized. With a package manager like npm, easily keep Matchstix up-to-date in your custom theme or plugin: no child theme required. Developers welcome.",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "snyk test && grunt test"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/starverte/matchstix#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-shell": "^1.1.2"
+    "grunt-shell": "^1.1.2",
+    "snyk": "^1.14.3"
   }
 }
