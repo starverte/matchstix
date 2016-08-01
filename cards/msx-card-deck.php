@@ -584,11 +584,11 @@ function msx_sanitize_card_deck_list( $input ) {
 function msx_card_deck_shortcode( $attr, $content = '' ) {
   extract( shortcode_atts( array( 'id' => 0, 'name' => '', 'size' => 'full' ), $attr ) );
   if ( ! empty( $id ) ) {
-    return msx_card_deck_display( $id, array( 'image_size' => $size ) );
+    return msx_card_deck_carousel( $id, array( 'image_size' => $size ) );
   } elseif ( ! empty( $name ) ) {
     $deck = get_page_by_title( $name, OBJECT, 'msx_card_deck' );
     if ( ! empty( $deck ) ) {
-      return msx_card_deck_display( $deck->ID, array( 'image_size' => $size ) );
+      return msx_card_deck_carousel( $deck->ID, array( 'image_size' => $size ) );
     }
   } else {
     return;
