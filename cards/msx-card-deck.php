@@ -568,3 +568,31 @@ function msx_sanitize_card_deck_list( $input ) {
   }
 }
 
+/**
+ * Builds the MSX Card Deck shortcode output.
+ *
+ * This implements the functionality of the MSX Card Deck Shortcode for displaying
+ * a deck of cards in a post.
+ *
+ * @see WordPress 4.3.1 add_shortcode()
+ * @see WordPress 4.3.1 wp_video_shortcode()
+ *
+ * @param array  $attr Attributes of the shortcode.
+ * @param string $content Shortcode content.
+ * @return string|void HTML content to display deck of cards.
+ */
+function msx_card_deck_shortcode( $attr, $content = '' ) {
+  extract( shortcode_atts( array( 'id' => 0, 'name' => '', 'size' => 'full' ), $attr ) );
+  if ( ! empty( $id ) ) {
+    return msx_card_deck_display( $id, array( 'image_size' => $size ) );
+  } elseif ( ! empty( $name ) ) {
+    $deck = get_page_by_title( $name, OBJECT, 'msx_card_deck' );
+    if ( ! empty( $deck ) ) {
+      return msx_card_deck_display( $deck->ID, array( 'image_size' => $size ) );
+    }
+  } else {
+    return;
+  }
+}
+add_shortcode( 'msx_card_deck', 'msx_card_deck_shortcode' );
+
