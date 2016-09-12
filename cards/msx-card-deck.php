@@ -582,17 +582,20 @@ function msx_sanitize_card_deck_list( $input ) {
  * @return string|void HTML content to display deck of cards.
  */
 function msx_card_deck_shortcode( $attr, $content = '' ) {
-  extract( shortcode_atts( array( 'id' => 0, 'name' => '', 'size' => 'full' ), $attr ) );
-  if ( ! empty( $id ) ) {
-    return msx_card_deck_carousel( $id, array( 'image_size' => $size ) );
-  } elseif ( ! empty( $name ) ) {
-    $deck = get_page_by_title( $name, OBJECT, 'msx_card_deck' );
+  $atts = shortcode_atts( array(
+    'id' => 0,
+    'name' => '',
+    'size' => 'full',
+  ), $attr, 'msx_card_deck' );
+  if ( ! empty( $atts['id'] ) ) {
+    return msx_card_deck_carousel( $atts['id'], array( 'image_size' => $atts['size'] ) );
+  } elseif ( ! empty( $atts['name'] ) ) {
+    $deck = get_page_by_title( $atts['name'], OBJECT, 'msx_card_deck' );
     if ( ! empty( $deck ) ) {
-      return msx_card_deck_carousel( $deck->ID, array( 'image_size' => $size ) );
+      return msx_card_deck_carousel( $deck->ID, array( 'image_size' => $atts['size'] ) );
     }
   } else {
     return;
   }
 }
 add_shortcode( 'msx_card_deck', 'msx_card_deck_shortcode' );
-

@@ -1,4 +1,4 @@
-Matchstix 0.1.0
+Matchstix 0.2.0
 =====
 A WordPress development framework with multiple components. Use to build any new or existing WordPress theme or plugin. All components are optional, flexible, and made to be extended and customized. With a package manager like npm, easily keep Matchstix up-to-date in your custom theme or plugin: no child theme required. Developers welcome.
 
