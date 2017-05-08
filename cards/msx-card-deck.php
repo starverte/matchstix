@@ -136,10 +136,10 @@ function msx_card_deck_edit() {
 
       <input type="hidden" name="card_<?php echo $card->ID; ?>_format" id="card_<?php echo $card->ID; ?>_format" value="<?php echo get_post_format( $card->ID ); ?>" />
     </div><?php
-    }
+    } // End if().
 
     $image = null;
-  } ?>
+  } // End foreach(). ?>
   </div>
 </div>
 
@@ -233,12 +233,12 @@ function msx_card_deck_save() {
             set_post_thumbnail( $card, $_POST[ 'card_' . $card . '_thumbnail' ] );
           }
           $cards_list = $cards_list . $card . ',';
-        }
-      }
-    }
+        } // End if().
+      } // End if().
+    } // End foreach().
 
     update_post_meta( $post->ID, 'cards_order', $cards_list );
-  }
+  } // End if().
 }
 add_action( 'save_post_msx_card_deck', 'msx_card_deck_save' );
 
@@ -366,7 +366,7 @@ function msx_card_deck_display( $deck, $args = array() ) {
               $output .= '</div>';
             }
             break;
-        }
+        } // End switch().
 
         $output .= ! empty( $card->post_title ) || ! empty( $card->post_content ) ? '<div class="caption">' : '';
         $output .= ! empty( $custom['target'][0] ) ? '<a href="' . $custom['target'][0] . '" title="' . $card->post_title . '">' : '';
@@ -376,15 +376,15 @@ function msx_card_deck_display( $deck, $args = array() ) {
         $output .= ! empty( $card->post_title ) || ! empty( $card->post_content ) ? '</div>' : '';
 
         $output .= '</li>';
-      }
-    }
+      } // End if().
+    } // End foreach().
 
     // End the deck of cards.
     $output .= '</ul>';
     $output .= '</' . $args['container'] . '>';
 
     echo $output;
-  }
+  } // End if().
 }
 
 /**
@@ -503,7 +503,7 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
               $output .= '</div>';
             }
             break;
-        }
+        } // End switch().
 
         $output .= '<div class="carousel-caption">';
         $output .= '<h4 class="msx-card-title">' . $card->post_title . '</h4>';
@@ -511,8 +511,8 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
         $output .= '</div>';
 
         $output .= '</div>';
-      }
-    }
+      } // End if().
+    } // End foreach().
 
     // End the deck of cards.
     $output .= '</div>';
@@ -531,7 +531,7 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
     $output .= '</div>';
 
     echo $output;
-  }
+  } // End if().
 }
 
 /**
