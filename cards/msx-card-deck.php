@@ -538,7 +538,11 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
  * Return IDs for all card decks
  */
 function msx_card_deck_list() {
-  $args = array( 'post_type' => 'msx_card_deck', 'posts_per_page' => -1 );
+  $args = array(
+    'post_type' => 'msx_card_deck',
+    'posts_per_page' => -1,
+  );
+
   $msx_card_decks = get_posts( $args );
   $card_decks = array();
   $card_decks[0] = 'None';
@@ -588,11 +592,21 @@ function msx_card_deck_shortcode( $attr, $content = '' ) {
     'size' => 'full',
   ), $attr, 'msx_card_deck' );
   if ( ! empty( $atts['id'] ) ) {
-    return msx_card_deck_carousel( $atts['id'], array( 'image_size' => $atts['size'] ) );
+    return msx_card_deck_carousel(
+      $atts['id'],
+      array(
+        'image_size' => $atts['size'],
+      )
+    );
   } elseif ( ! empty( $atts['name'] ) ) {
     $deck = get_page_by_title( $atts['name'], OBJECT, 'msx_card_deck' );
     if ( ! empty( $deck ) ) {
-      return msx_card_deck_carousel( $deck->ID, array( 'image_size' => $atts['size'] ) );
+      return msx_card_deck_carousel(
+        $deck->ID,
+        array(
+          'image_size' => $atts['size'],
+        )
+      );
     }
   } else {
     return;
