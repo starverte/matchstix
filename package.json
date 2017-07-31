@@ -33,7 +33,7 @@
   "homepage": "https://github.com/starverte/matchstix#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-shell": "^1.1.2",
-    "snyk": "^1.14.3"
+    "grunt-shell": "^2.1.0",
+    "snyk": "^1.37.0"
   }
 }
