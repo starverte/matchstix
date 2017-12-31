@@ -152,9 +152,12 @@ function msx_card_deck_edit() {
  */
 function msx_card_deck_save() {
 	global $post;
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE && ( isset( $post_id ) ) ) { return $post_id; }
-	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && ( isset( $post_id ) ) ) { return $post_id; }
-	if ( preg_match( '/\edit\.php/', $_SERVER['REQUEST_URI'] ) && ( isset( $post_id ) ) ) { return $post_id; }
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE && ( isset( $post_id ) ) ) {
+		return $post_id; }
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX && ( isset( $post_id ) ) ) {
+		return $post_id; }
+	if ( preg_match( '/\edit\.php/', $_SERVER['REQUEST_URI'] ) && ( isset( $post_id ) ) ) {
+		return $post_id; }
 
 	if ( isset( $_POST['cards_order'] ) ) {
 		$cards_list = '';
@@ -330,7 +333,7 @@ function msx_card_deck_display( $deck, $args = array() ) {
 				);
 
 				switch ( $format ) {
-					case 'image' :
+					case 'image':
 						$img_src = wp_get_attachment_image_url( $custom['image'][0], $args['image_size'] );
 						$img_src_set = wp_get_attachment_image_srcset( $custom['image'][0], $args['image_size'] );
 						$img_sizes = wp_get_attachment_image_sizes( $custom['image'][0], $args['image_size'] );
@@ -346,7 +349,7 @@ function msx_card_deck_display( $deck, $args = array() ) {
 
 						$output .= ! empty( $custom['target'][0] ) ? '</a>' : '';
 						break;
-					case 'video' :
+					case 'video':
 						$video_meta = wp_get_attachment_metadata( $custom['video'][0] );
 						$video_url = wp_get_attachment_url( $custom['video'][0] );
 						$video_source = sprintf( '<source src="%1$s" type="%2$s">', $video_url, get_post_mime_type( $custom['video'][0] ) );
@@ -359,7 +362,7 @@ function msx_card_deck_display( $deck, $args = array() ) {
 							$video_source
 						);
 						break;
-					case 'link' :
+					case 'link':
 						if ( ! empty( $custom['video'][0] ) ) {
 							$output .= '<div class="embed-responsive embed-responsive-16by9">';
 							$output .= '<iframe src="' . $custom['video'][0] . '" autoload></iframe>';
@@ -467,7 +470,7 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
 				);
 
 				switch ( $format ) {
-					case 'image' :
+					case 'image':
 						$img_src = wp_get_attachment_image_url( $custom['image'][0], $args['image_size'] );
 						$img_src_set = wp_get_attachment_image_srcset( $custom['image'][0], $args['image_size'] );
 						$img_sizes = wp_get_attachment_image_sizes( $custom['image'][0], $args['image_size'] );
@@ -483,7 +486,7 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
 
 						$output .= ! empty( $custom['target'][0] ) ? '</a>' : '';
 						break;
-					case 'video' :
+					case 'video':
 						$video_meta = wp_get_attachment_metadata( $custom['video'][0] );
 						$video_url = wp_get_attachment_url( $custom['video'][0] );
 						$video_source = sprintf( '<source src="%1$s" type="%2$s">', $video_url, get_post_mime_type( $custom['video'][0] ) );
@@ -496,7 +499,7 @@ function msx_card_deck_carousel( $deck, $args = array() ) {
 							$video_source
 						);
 						break;
-					case 'link' :
+					case 'link':
 						if ( ! empty( $custom['video'][0] ) ) {
 							$output .= '<div class="embed-responsive embed-responsive-16by9">';
 							$output .= '<iframe src="' . $custom['video'][0] . '" autoload noborder></iframe>';
