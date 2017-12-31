@@ -1,16 +1,16 @@
 {
-  "name": "starverte/matchstix",
-  "version": "0.2.0",
-  "description": "A WordPress development framework with multiple, optional components. Use to build any new or existing WordPress theme or plugin. Developers welcome.",
-  "license": "GPLv3",
-  "authors": [
-    {
-      "name": "Star Verte LLC",
-      "email": "dev@starverte.com"
-    }
-  ],
-  "require-dev": {
-    "squizlabs/php_codesniffer": "~2.9",
-    "wp-coding-standards/wpcs": "~0.11"
-  }
+	"name": "starverte/matchstix",
+	"version": "0.2.0",
+	"description": "A WordPress development framework with multiple, optional components. Use to build any new or existing WordPress theme or plugin. Developers welcome.",
+	"license": "GPLv3",
+	"authors": [
+		{
+			"name": "Star Verte LLC",
+			"email": "dev@starverte.com"
+		}
+	],
+	"require-dev": {
+		"squizlabs/php_codesniffer": "~2.9",
+		"wp-coding-standards/wpcs": "~0.11"
+	}
 }
