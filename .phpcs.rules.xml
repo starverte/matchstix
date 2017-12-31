@@ -11,10 +11,6 @@
 		<exclude name="WordPress.VIP" />
 
 		<!-- Temporary exclusions. -->
-		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
-		<exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
-
-		<exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
 		<exclude name="WordPress.CSRF" />
 		<exclude name="WordPress.XSS" />
 	</rule>
