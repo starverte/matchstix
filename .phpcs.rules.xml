@@ -15,7 +15,17 @@
     <exclude name="WordPress.VIP" />
 
     <!-- Temporary exclusions. -->
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent" />
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
+
+    <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
+
+    <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
     <exclude name="WordPress.CSRF" />
+    <exclude name="WordPress.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
+    <exclude name="WordPress.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose" />
     <exclude name="WordPress.XSS" />
   </rule>
 </ruleset>
